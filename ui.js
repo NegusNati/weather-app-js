@@ -8,7 +8,7 @@ class UI {
     this.icon = document.getElementById("w-icon");
     this.humidity = document.getElementById("w-humidity");
     this.pressure = document.getElementById("w-pressure");
-    this.dew_point = document.getElementById("w-dew_point");
+    this.tempMax = document.getElementById("w-temp_max");
     this.wind = document.getElementById("w-wind");
   }
 
@@ -40,6 +40,10 @@ class UI {
     // this.image.innerHTML = `<img id="w-icon" alt="Icon" src="http://openweathermap.org/img/wn/${icon}@2x.png">`;
     const i = `http://openweathermap.org/img/wn/${icon}@2x.png`;
     this.icon.setAttribute('src',i);
+    this.humidity.textContent = `Relative Humidity: ${data.main.humidity}`
+    this.pressure.textContent = `Avarage Pressure: ${data.main.pressure}`
+    this.tempMax.textContent = `Max Temprature: ${data.main.temp_max}°C`
+    this.wind.textContent = `Wind Speed: ${data.wind.speed}°C`
     
     
   }
